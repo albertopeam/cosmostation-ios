@@ -37,7 +37,7 @@ class TxInstantContractCell: TxCell {
             labelLabel.text = msg.label
             
             if let msgDetail = try? JSONSerialization.jsonObject(with: msg.msg, options: .allowFragments) as? [String : Any]  {
-                messageLabel.text = String(describing: msgDetail!)
+                messageLabel.text = String(describing: msgDetail)
             }
             
             if (msg.funds.count > 0) {

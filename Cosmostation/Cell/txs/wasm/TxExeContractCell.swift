@@ -33,8 +33,8 @@ class TxExeContractCell: TxCell {
             contractAddressLabel.text = msg.contract
             
             if let msgDetail = try? JSONSerialization.jsonObject(with: msg.msg, options: .allowFragments) as? [String : Any]  {
-                let msgKey = msgDetail!.map{String($0.key) }.first
-                let msgVlaue = msgDetail![msgKey!]
+                let msgKey = msgDetail.map{String($0.key) }.first
+                let msgVlaue = msgDetail[msgKey!]
                 typeLabel.text = msgKey
                 messageLabel.text = String(describing: msgVlaue!)
             }
